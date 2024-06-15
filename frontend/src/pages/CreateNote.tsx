@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { Appbar } from '../components/Appbar'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -36,7 +36,7 @@ const [content,setContent]=useState("");
           <textarea
             id="content"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            rows="5"
+            rows={5}
             onChange={(e) =>{
               setContent(e.target.value)
             }}
@@ -48,7 +48,7 @@ const [content,setContent]=useState("");
             type="submit"
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             onClick={async ()=>{
-              const response=await axios.post("https://backend.pujaharikolin.workers.dev/api/v1/notes/create",{
+              await axios.post("https://backend.pujaharikolin.workers.dev/api/v1/notes/create",{
                         title,
                         content
               });

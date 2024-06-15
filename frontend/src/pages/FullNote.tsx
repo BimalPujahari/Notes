@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Appbar } from '../components/Appbar';
 import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
